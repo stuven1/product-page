@@ -16,7 +16,7 @@ In the "code" folder in this assignment you'll find a copy of the Technigo React
 
 ### React Components
 
-Start by thinking of how to divide your page into React components. For example, you might want to build a `Page` component which is responsible for reading the JSON, and a `Product` component which the `Page` could render for each product. Try to draw out your plan on paper to get it clear in your mind.
+Start by thinking about what components you might need and where they'll be used. For example, a simple solution is to make the `App` component responsible for loading and reading the JSON, and then build a `Product` component which the `App` component would render for each product in the array. Try to draw out your plan on paper to get it clear in your mind before you start.
 
 ### Iterate over the data
 
