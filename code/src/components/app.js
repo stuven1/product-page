@@ -1,8 +1,26 @@
 import React from "react"
 import Products from "./products.js"
-const productsJson = require("./../products.json")
+// const productsJson = require("./../products.json")
 
  class App extends React.Component {
+
+     constructor(props) {
+       super(props)
+       this.state = {
+         productsJson: []
+       }
+     }
+
+   componentDidMount() {
+     fetch("http://localhost:8080/products").then(response => {
+       return response.json()
+     }).then((json) => {
+       this.setState({
+         productsJson: json
+       })
+       console.log(this.state.productsJson);
+     })
+   }
 
    render() {
      return (
@@ -13,7 +31,7 @@ const productsJson = require("./../products.json")
 
       <div className="main-container">
 
-        {productsJson.products.map((item) => {
+        {this.state.productsJson.map((item) => {
           return <Products
            image={item.image}
             key={item.id}
